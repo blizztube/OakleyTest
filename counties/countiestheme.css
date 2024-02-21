@@ -1,0 +1,178 @@
+.unnamed1 {  font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-style: normal; font-weight: normal; font-variant: normal; color: #669900; text-decoration: none}
+.Blue {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000099;
+	text-decoration: none;
+	margin: 0px;
+	padding: 0px;
+}
+.Black {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: justify;
+	text-indent: 2pt;
+	margin: 0px;
+	padding: 0px;
+}
+.BlackBig {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: justify;
+	text-indent: 2pt;
+	margin: 0px;
+	padding: 0px;
+}
+.Grey { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; font-variant: normal; color: #999999; text-decoration: none }
+.map-bot {  border-color: #333333 black black; border-top-width: medium}
+.urh {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: normal; color: #FFFFFF; text-decoration: none}
+.maphead {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14pt; font-style: normal; font-weight: normal; color: #FFFFFF}
+.map-act {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; color: #003399; clip:    rect(   ); margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; text-decoration: none; text-align: left}.white {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: justify;
+	text-indent: 2pt
+}
+.whitebig {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FFFFFF;
+	text-decoration: none
+}
+.norvag {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #4575B4;
+	text-align: center;
+}
+.Black_it {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: italic;
+	font-weight: normal;
+	font-variant: normal;
+	color: #003399;
+	text-decoration: none;
+	text-align: justify;
+	text-indent: 2pt;
+	margin: 0px;
+	padding: 0px;
+}
+.table_ital {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: italic;
+	font-weight: normal;
+	font-variant: normal;
+	color: #003399;
+	text-decoration: none;
+	text-align: left;
+	text-indent: 2pt;
+	margin: 0px;
+	padding: 0px;
+	border: medium none #000033;
+}
+.table_map {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-style: italic;
+	font-weight: normal;
+	font-variant: normal;
+	color: #BECAE2;
+	text-decoration: none;
+	text-align: left;
+	text-indent: 0pt;
+	margin: 0px;
+	padding: 0px;
+	border-top-color: BECAE2;
+	border-right-color: BECAE2;
+	border-bottom-color: BECAE2;
+	border-left-color: BECAE2;
+}
+.BlackTab {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: left;
+	text-indent: 2pt;
+	margin: 0px;
+	padding: 0px;
+}
+.scansey {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	font-weight: normal;
+	color: 8B1888;
+	text-align: center;
+}
+.tronlad {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	font-weight: normal;
+	color: F0C000;
+	text-align: center;
+}
+.garand {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #009999;
+	text-align: center;
+}
+.BlackCen {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: center;
+	text-indent: 2pt;
+	margin: 0px;
+	padding: 0px;
+}
+.BlackTabYel {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: left;
+	text-indent: 2pt;
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFFFCC;
+}
