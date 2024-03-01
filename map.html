@@ -1,62 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaflet Map with Multiple Features</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaflet Map with Dynamic Sidebar</title>
+
+  <!-- Include Leaflet.js directly in the HTML -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      overflow: hidden;
+    }
+
+    #map {
+      flex: 1;
+      height: 100vh;
+    }
+
+    .custom-sidebar {
+      position: fixed;
+      right: -400px;
+      /* Start off-screen */
+      top: 0;
+      height: 100%;
+      width: 300px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: right 0.5s ease-out;
+      z-index: 1000;
+    }
+
+    .custom-sidebar img {
+      max-width: 100%;
+      height: auto;
+    }
     
-    <!-- Include Leaflet.js directly in the HTML -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    /* Normal state styles */
+    .nameloc {
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    /* Hover state styles */
+    .nameloc:hover {
+      color: blue;
+      transform: scaleX(1.05); scaleY(1.05);  /* Adjust the scale factor as needed */
+    }
+  </style>
 </head>
+
 <body>
-    <div id="map" style="height: 400px;"></div>
+  <div id="map"></div>
 
-    <script>
-        // Initialize the map
-        var mymap = L.map('map').setView([0, 0], 2);
+  <!-- Example custom sidebars -->
+  <div id="sidebar1" class="custom-sidebar" style="background-color: white; z-index: 1001; border: black 2px solid;">
+    <div style="display: flex;">
+      <div style="width: 40%;">
+        <div style="border: black 2px solid;">
+          <img src="https://blizztube.github.io/Oakley-FSA/lecar.ico" alt="lecar" style="width: 100%; height: auto; display: block; margin: 0;">
+        </div>
+      </div>
+      <div style="width: 60%; text-align: right;">
+        <a href="link.com" class="nameloc"><h2>Oakley</h2></a>
+        <p>Population: 1,200,000</p>
+      </div>
+    </div>
+  </div>
 
-        // Use the default OpenStreetMap tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(mymap);
+  <div id="sidebar2" class="custom-sidebar" style="background-color: white; z-index: 1002; border: black 2px solid;">
+    <div style="display: flex;">
+      <div style="width: 40%;">
+        <div style="border: black 2px solid;">
+          <img src="https://blizztube.github.io/Oakley-FSA/lecar.ico" alt="lecar" style="width: 100%; height: auto; display: block; margin: 0;">
+        </div>
+      </div>
+      <div style="width: 60%; text-align: right;">
+        <a href="link.com" class="nameloc"><h2>Acres Township</h2></a>
+        <p>Population: 78</p>
+        <p>Area: 3.8 sq mi</p>
+        <p>Density: 20 sq mi</p>
+      </div>
+    </div>
+  </div>
+  <!-- End of custom sidebars -->
 
-        // Add a marker
-        var marker1 = L.marker([51.505, -0.09]).addTo(mymap);
-        marker1.bindPopup("<b>Marker 1</b>").openPopup();
+  <script>
+    var mymap = L.map('map').setView([-41.4829,160.8701], 9);
+    L.tileLayer('https://tile.opengeofiction.net/ogf-carto/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(mymap);
+    // Associate each multipolygon with a specific sidebar
+    var multipolygons = [{
+        coordinates: [
+          [-41.70484, 159.9854],
+          [-41.70556, 160.59416],
+          [-41.66886, 160.62313],
+          [-41.58500, 160.65163],
+          [-41.53272, 160.64042],
+          [-41.51279, 160.6703],
+          [-41.45874, 160.68553],
+          [-41.43811, 160.70426],
+          [-41.40667, 160.7648],
+          [-41.41651, 160.76094],
+          [-41.42092, 160.77451],
+          [-41.41851, 160.78547],
+          [-41.42972, 160.79373],
+          [-41.42271, 160.80108],
+          [-41.43001, 160.80937],
+          [-41.43028, 160.82203],
+          [-41.43915, 160.84036],
+          [-41.45088, 160.85463],
+          [-41.4399, 160.8945],
+          [-41.3836, 160.9841],
+          [-41.24856, 161.04358],
+          [-40.80767, 160.61716],
+          [-40.69363, 160.36872],
+          [-40.90906, 160.19911],
+          [-40.9133, 160.1522],
+          [-40.9498, 160.1043],
+          [-40.97714, 160.1191],
+          [-40.98322, 160.11230],
+          [-40.99138, 160.11349],
+          [-40.99372, 160.08919],
+          [-41.01513, 160.06798],
+          [-41.04641, 160.11528],
+          [-41.07134, 160.16752],
+          [-41.07796, 160.12367],
+          [-41.09657, 160.1066],
+          [-41.09430, 160.03754],
+          [-41.09490, 160.03674],
+          [-41.1119, 160.0734],
+          [-41.1489, 160.0189],
+          [-41.14370, 159.96317],
+          [-41.2543, 159.946],
+          [-41.28313, 159.93329],
+          [-41.3068, 159.9544],
+          [-41.38820, 159.96054],
+          [-41.39050, 160.00287],
+          [-41.43832, 160.02091],
+          [-41.47662, 159.97874],
+          [-41.51760, 159.99460],
+          [-41.5898, 159.9394],
+          [-41.6221, 159.9002],
+          [-41.6334, 159.9211],
+          [-41.65257, 159.93037],
+          [-41.65272, 159.98524],
+          [-41.70484, 159.9854]
+        ],
+        sidebarId: 'sidebar1'
+      },
+      {
+        coordinates: [
+          [-41.30582,159.95298],
+          [-41.38785,159.96056],
+          [-41.38984,160.00228],
+          [-41.38661,160.0019],
+          [-41.38402,159.97066],
+          [-41.38402,159.97066],
+          [-41.38402,159.97066],
+          [-41.30582,159.95298]
+        ],
+        sidebarId: 'sidebar2'
+      }
+      // Add more multipolygons as needed
+    ];
+    multipolygons.forEach(function(multipolygonData) {
+      var multipolygon = L.polygon([multipolygonData.coordinates], {
+        color: 'black',
+        fillColor: 'blue',
+        fillOpacity: 0.2
+      }).addTo(mymap);
+      multipolygon.on('click', function(event) {
+        openCustomSidebar(multipolygonData.sidebarId);
+      });
+    });
 
-        // Add another marker
-        var marker2 = L.marker([40.7128, -74.006]).addTo(mymap);
-        marker2.bindPopup("<b>Marker 2</b>").openPopup();
-
-        // Coordinates of another polygon
-        var multipolygonCoordinates = [
-            [-42.0244154, 161.390266],
-            [-42.022986, 161.434015],
-            [-41.4071687,160.7631326],
-          [-41.8144907,160.6921958],
-          [-41.9286148,160.9154332],
-          [-42.1514353,161.2153308],
-          [-42.0689771,161.3761147],
-            // ... additional coordinates ...
-            [-42.0244154, 161.390266]  // Repeat the first point to close the polygon
-        ];
-
-        // Create another polygon with coordinates
-        var anotherPolygon = L.polygon([multipolygonCoordinates], {
-            color: 'green',
-            fillColor: 'yellow',
-            fillOpacity: 0.5
-        }).addTo(mymap);
-
-        // Popup content for the polygon
-        var polygonPopupContent = "<b>Another Polygon</b>";
-
-        // Bind a popup to the polygon
-        anotherPolygon.bindPopup(polygonPopupContent);
-
-        // Fit the map to show all markers and polygons
-        mymap.fitBounds([marker1.getLatLng(), marker2.getLatLng(), anotherPolygon.getBounds().getCenter()]);
-    </script>
+    function openCustomSidebar(sidebarId) {
+      // Close all custom sidebars
+      document.querySelectorAll('.custom-sidebar').forEach(function(sidebar) {
+        sidebar.style.right = '-400px';
+      });
+      // Open the selected custom sidebar
+      var selectedSidebar = document.getElementById(sidebarId);
+      if (selectedSidebar) {
+        selectedSidebar.style.right = '0';
+      }
+    }
+  </script>
 </body>
+
 </html>
