@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Leaflet Map</title>
+    
+    <!-- Include Leaflet.js from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-nx1XNqSIc5+B13AE1NHLXgQWPAD6S6Oz56wV91uT8sUc9XVOsaXtfU5T3+8FNaCIKS19BB4Py6X+57v97Y3JnIg==" crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-QVftw4HfYdH7gRrA5SLSJxA5PP5ZXZB6lTIq3aF8W9vF1dAiRPmjUSllf9JrgUvnU7okcbNrMxiy1Zk9m7fi8w==" crossorigin=""></script>
+</head>
+<body>
+    <div id="map" style="height: 400px;"></div>
+
+    <script>
+        // Initialize the map
+        var mymap = L.map('map').setView([51.505, -0.09], 13);
+
+        // Add a tile layer (replace 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' with the appropriate OpenGeofiction tile URL)
+        L.tileLayer('tms[19]:https://tile.opengeofiction.net/ogf-carto/{zoom}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(mymap);
+    </script>
+</body>
+
+</html>
